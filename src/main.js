@@ -1,8 +1,8 @@
 import './style.css'
 import { Header } from './Components/Header'
-import { Card } from './Components/Card'
+import gallery from './Components/gallery'
 document.querySelector('#app').innerHTML = `
   ${Header()}
-  ${  Card()}
 `
+document.querySelector('#app').appendChild(gallery())
 setupCounter(document.querySelector('#counter'))

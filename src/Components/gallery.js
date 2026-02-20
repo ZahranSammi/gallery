@@ -8,14 +8,9 @@ const items = [
 export default function gallery(){
     const container=document.createElement('div');
     container.id='gallery-card';
-    container.className='p-4';
+    container.className='p-4 grid gap-4 auto-rows-max grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
 items.forEach(item=>{
     const card=Card(item.imageSrc,item.altText);
     container.appendChild(card);});
-    new Masonry(container, {
-        itemSelector: '.bg-white',
-        columnWidth: 200,
-        gutter: 10
-      });
     return container;
 }
