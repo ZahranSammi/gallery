@@ -92,3 +92,42 @@ body {
     opacity: 1;
   }
 }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.explore-page,
+.auth-page,
+.create-page,
+.settings-page,
+.not-found-page {
+  animation: detailReveal 0.45s ease both;
+}
+
+.board-card-cover-image {
+  transform-origin: center center;
+}
+
+.profile-page .line-clamp-2,
+.explore-page .line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1279px) {
+  .auth-page,
+  .create-page,
+  .settings-page {
+    grid-template-columns: 1fr;
+  }
+}
