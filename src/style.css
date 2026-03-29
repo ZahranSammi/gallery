@@ -1,1 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+:root {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 15%, #fde68a 0%, rgba(253, 230, 138, 0) 35%),
+    radial-gradient(circle at 90% 10%, #fbcfe8 0%, rgba(251, 207, 232, 0) 30%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.pin-card {
+  animation: pinReveal 0.45s ease both;
+}
+
+.detail-page,
+.profile-page {
+  animation: detailReveal 0.45s ease both;
+}
+
+.detail-panel,
+.detail-side {
+  backdrop-filter: blur(8px);
+}
+
+.detail-hero-image {
+  max-height: min(72vh, 820px);
+}
+
+.detail-related-grid img {
+  aspect-ratio: 3 / 4;
+}
+
+.detail-related-item {
+  cursor: pointer;
+}
+
+.profile-page ::-webkit-scrollbar {
+  height: 8px;
+}
+
+.profile-page ::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.35);
+  border-radius: 999px;
+}
+
+@media (max-width: 1023px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pin-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@keyframes pinReveal {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes detailReveal {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
